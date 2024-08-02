@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+.headerLayout {
+  grid-area: header;
+  border: var(--theme-border);
+}
+
+.navLayout {
+  grid-area: nav;
+  border: var(--theme-border);
+}
+
+.ulStyle {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+}
+
+.navLayout > .ulStyle {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.mainLayout {
+  grid-area: main;
+  border: var(--theme-border);
+  /* This single rule prevents the footer from being pushed down when the content in the main section overflows the maximum height */
+  overflow: auto;
+}
+
+.asideLayout {
+  grid-area: sidebar;
+  border: var(--theme-border);
+  overflow: auto;
+}
+
+.footerLayout {
+  grid-area: footer;
+  border: var(--theme-border);
+}
+
+.appContainerLayout {
+  /* Theme */
+  color: var(--theme-frontColor);
+  background-color: var(--theme-backgroundColor);
+  max-width: 100vw;
+  min-width: 246px;
+  height: 100%;
+  margin: 0 auto;
+
+  /* Grid properties */
+  display: grid;
+  grid-gap: 1px;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "sidebar"
+    "footer";
+  grid-template-rows: 55px minmax(90px, auto) 2fr 1fr 55px;
+}
+
+@media screen and (min-width: 520px) {
+  .appContainerLayout {
+    grid-template-areas:
+      "header	header"
+      "nav		nav"
+      "main		sidebar"
+      "footer	footer";
+    grid-template-columns: 6fr 2fr;
+    grid-template-rows: 68px minmax(90px, auto) 2fr 55px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .appContainerLayout {
+    grid-template-areas:
+      "header	header	header"
+      "nav		main	sidebar"
+      "footer	footer	footer";
+    grid-template-columns: 2fr 10fr 3fr;
+    grid-template-rows: 80px minmax(90px, 2fr) 55px;
+  }
+
+  .navLayout {
+    height: 100%;
+    overflow: auto;
+  }
+
+  .navLayout > .ulStyle {
+    display: flex;
+    flex-direction: column;
+  }
+}
