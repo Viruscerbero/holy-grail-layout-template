@@ -1,0 +1,5 @@
+.mainStyle {
+  height: max-content;
+  color: var(--theme-frontColor);
+  background-color: var(--theme-backgroundColor);
+}

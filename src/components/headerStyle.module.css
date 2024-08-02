@@ -1,0 +1,5 @@
+.headerStyle {
+  height: 100%;
+  color: var(--theme-frontColor);
+  background-color: var(--theme-backgroundColor);
+}

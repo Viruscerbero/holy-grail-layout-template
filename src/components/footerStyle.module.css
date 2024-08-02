@@ -1,0 +1,7 @@
+.footerStyle {
+  height: 100%;
+  color: var(--theme-frontColor);
+  background-color: var(--theme-backgroundColor);
+  display: grid;
+  grid-template-columns: 2fr 10fr 2fr;
+}

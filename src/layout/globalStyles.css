@@ -1,0 +1,14 @@
+:root {
+  --theme-border: 1px solid #000;
+  --theme-frontColor: #380505;
+  --theme-backgroundColor: #f7f1f1;
+}
+
+#root {
+  height: 100vh;
+  color: #000;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-align: center;
+  background-color: #fff;
+}
